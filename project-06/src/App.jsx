@@ -51,7 +51,7 @@ function App() {
             {Array.from({ length: 8 }).map((_, index) => (
               <div
                 key={index}
-                className="h-[420px] animate-pulse rounded-[26px] border border-slate-800 bg-slate-900/70"
+                className=" animate-pulse rounded-[26px] border border-slate-800 bg-slate-900/70"
               />
             ))}
           </div>
