@@ -1,0 +1,104 @@
+.stopwatch-card {
+  width: min(100%, 420px);
+  margin: 3rem auto;
+  padding: 1.5rem;
+  border: 1px solid #d9dee5;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 1rem;
+}
+
+.stopwatch-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+}
+
+.stopwatch-display {
+  padding: 0.8rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.second-revolution {
+  width: 78px;
+  height: 78px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1px solid #d0d7e2;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+}
+
+.second-ring {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 3px solid #e2e8f0;
+  border-top-color: #0f172a;
+}
+
+.second-ring.is-running {
+  animation: second-spin 1s linear infinite;
+}
+
+@keyframes second-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.stopwatch-actions button {
+  border: 1px solid #d0d7e2;
+  border-radius: 10px;
+  padding: 0.62rem 0.85rem;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    transform 140ms ease;
+}
+
+.stopwatch-actions button:hover {
+  background: #eef2f7;
+  transform: translateY(-1px);
+}
+
+.stopwatch-actions button:focus-visible {
+  outline: 2px solid #1e293b;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .stopwatch-card {
+    margin: 1.4rem auto;
+    padding: 1rem;
+  }
+
+  .stopwatch-actions {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
